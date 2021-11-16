@@ -1,0 +1,10 @@
+{
+  "name": "@scope/package3",
+  "version": "1.0.0",
+  "dependencies": {
+    "@scope/package1": "workspace:1.0.0"
+  },
+  "scripts": {
+    "test": "node -p \"console.log('test package 3')\""
+  }
+}

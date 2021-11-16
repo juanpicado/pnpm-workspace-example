@@ -1,0 +1,7 @@
+{
+  "name": "@scope/package5",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node -p \"console.log('test package 5')\""
+  }
+}
