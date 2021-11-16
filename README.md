@@ -58,12 +58,6 @@ o ejectuar multiples
 pnpm test --filter "@scope/package1" --filter "@scope/package5"
 ```
 
-Puedes excluir filtrar desde un commit
-
-```bash
-pnpm test --filter "...[origin/main]"
-```
-
 ### Ejecutar Recursivo
 
 Ejecutar `test` en todos los paquetes con `pnpm recursive`

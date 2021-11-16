@@ -17,6 +17,18 @@ importers:
     dependencies:
       '@scope/package1': link:../package1
 
+  packages/package3:
+    specifiers:
+      '@scope/package1': workspace:1.0.0
+    dependencies:
+      '@scope/package1': link:../package1
+
+  tools/package5:
+    specifiers: {}
+
+  tools/package6:
+    specifiers: {}
+
 packages:
 
   /typescript/4.4.4:
