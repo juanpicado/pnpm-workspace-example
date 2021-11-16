@@ -37,14 +37,31 @@ pnpm test --filter "@scope/package1"
 o directorio
 
 ```bash
+# Un solo directorio
 pnpm test --filter ./packages/package1
-pnpm test --filter {package1}
+# Todos los paquetes dentro de directorio packages (relativo)
+pnpm test --filter {./packages}
 ```
 
 o los paquetes que dependen de `@scope/package1`
 
 ```bash
 pnpm test --filter ...^@scope/package1
+
+# Tambien se puede usar directorio (dentro de ./packages) en combinacion con todos los paquetes dependientes de @scope/package 1 d
+pnpm test --filter ...^{./packages}
+```
+
+o ejectuar multiples
+
+```bash
+pnpm test --filter "@scope/package1" --filter "@scope/package5"
+```
+
+Puedes excluir filtrar desde un commit
+
+```bash
+pnpm test --filter "...[origin/main]"
 ```
 
 ### Ejecutar Recursivo
