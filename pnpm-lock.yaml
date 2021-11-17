@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       typescript: ^4.4.4
-      validator: 12.0.0
+      validator: ^12.0.0
     dependencies:
       typescript: 4.4.4
       validator: 12.0.0

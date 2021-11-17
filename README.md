@@ -75,3 +75,11 @@ Check vulnerabilities in your dependencies
 ```bash
 pnpm audit
 ```
+
+### Update dependencies (interactive)
+
+To update dependencies interactive mode.
+
+```bash
+ pnpm update -i
+```

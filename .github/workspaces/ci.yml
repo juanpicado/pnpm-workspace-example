@@ -1,0 +1,39 @@
+name: pnpm ci test
+
+on:
+  push:
+    branches:
+      - master
+      - 'changeset-release/master'
+  pull_request:
+    paths:
+      - .changeset/**
+      - .github/workflows/ci.yml
+      - 'packages/**'
+      - 'jest/**'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+jobs:
+    steps:
+    - uses: actions/checkout@v2.4.0
+    - name: Use Node 14
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14 
+    - name: Install pnpm
+      run: npm i pnpm@latest
+    - name: set store
+      run: | 
+        mkdir ~/.pnpm-store
+        pnpm config set store-dir ~/.pnpm-store
+    - name: Install
+      run: pnpm recursive install --frozen-lockfile
+    - name: Cache .pnpm-store
+      uses: actions/cache@v2
+      with:
+        path: ~/.pnpm-store
+        key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+        restore-keys: |
+          pnpm-
+    - name: test
+    - uses: pnpm test          
