@@ -67,3 +67,11 @@ Ejecutar `test` en todos los paquetes con `pnpm recursive`
     "test": "pnpm recursive test"
   },
 ```
+
+### Audit
+
+Check vulnerabilities in your dependencies
+
+```bash
+pnpm audit
+```
